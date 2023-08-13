@@ -1,5 +1,5 @@
 <script lang="ts">
-  let age_input;
+  let age_input: number;
   function reset_age() {
     age_input = 21;
   }
@@ -9,7 +9,7 @@
   const SHAZ_AGE = 20;
   $: is_shaz = age < SHAZ_AGE;
 
-  let dialog;
+  let dialog: HTMLDialogElement;
   $: if (is_shaz) {
     dialog.showModal();
   }
@@ -33,6 +33,12 @@
 </main>
 
 <style>
+  img {
+    max-width: calc(100% - 50px);
+  }
+  dialog {
+    margin: min(auto, 1rem);
+  }
   /* Chrome, Safari, Edge, Opera */
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
